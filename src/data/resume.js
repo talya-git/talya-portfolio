@@ -40,7 +40,58 @@ export const projects = [
     ],
     images: [],
     liveUrl: null,
-    githubUrl: null
+    githubUrl: "https://github.com/talya-git/project-react-node"
+  },
+  {
+    id: 2,
+    title: "מערכת ניהול יחידות ארגוניות (IRG)",
+    description: "מערכת Full-Stack היררכית לניהול יחידות ארגוניות - פרויקט במשרד החינוך",
+    techStack: {
+      server: [".NET 8", "EF Core", "SQL Server", "Redis"],
+      client: ["Angular 19", "PrimeNG", "NgRx", "TypeScript"]
+    },
+    highlights: [
+      "ארכיטקטורת שכבות עם Generic Repository",
+      "אימות OIDC מול ADFS עם שכבת BFF",
+      "Redis Caching בדפוס Cache-Aside",
+      "ניהול הרשאות RBAC ותצוגות עץ דינמיות"
+    ],
+    images: [],
+    liveUrl: null,
+    githubUrl: "https://github.com/talya-git/project-angular-netCore"
+  },
+  {
+    id: 3,
+    title: "Docker Redis",
+    description: "פרויקט הדגמת עבודה עם Redis ו-Docker",
+    techStack: {
+      server: ["Docker", "Redis"],
+      client: []
+    },
+    highlights: [
+      "הקמת סביבת Docker עם Redis",
+      "ניהול Cache ושיפור ביצועים"
+    ],
+    images: [],
+    liveUrl: null,
+    githubUrl: "https://github.com/talya-git/Docker-Redis"
+  },
+  {
+    id: 4,
+    title: "תרגילי אלגוריתמים",
+    description: "אוסף תרגילים ופתרונות באלגוריתמים ומבני נתונים",
+    techStack: {
+      server: ["C", "Java"],
+      client: []
+    },
+    highlights: [
+      "אלגוריתמים על גרפים",
+      "מבני נתונים מתקדמים",
+      "פתרון בעיות לוגיות מורכבות"
+    ],
+    images: [],
+    liveUrl: null,
+    githubUrl: "https://github.com/talya-git/exe-10"
   }
 ];
 
