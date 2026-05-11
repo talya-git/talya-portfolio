@@ -26,8 +26,8 @@ export const experience = [
 export const projects = [
   {
     id: 1,
-    title: "E-Commerce Platform",
-    description: "A dynamic, feature-rich online shopping interface with real-time inventory management and seamless user experience",
+    title: "Oz Ceramics — E-Commerce Store",
+    description: "A dynamic, feature-rich online ceramics shopping platform with real-time inventory management and seamless user experience",
     techStack: {
       server: ["Node.js", "C#", "Web API", "SQL Server", "MongoDB"],
       client: ["React 19", "JavaScript", "HTML5", "CSS3"]
@@ -52,8 +52,8 @@ export const projects = [
   },
   {
     id: 2,
-    title: "Organizational Unit Management System",
-    description: "Enterprise-grade full-stack application for managing hierarchical organizational structures — developed for the Ministry of Education",
+    title: "Luxury Action — Chinese Auction",
+    description: "Enterprise-grade full-stack Chinese auction management system with hierarchical organizational structures — developed for the Ministry of Education",
     techStack: {
       server: [".NET 8", "EF Core", "SQL Server", "Redis"],
       client: ["Angular 19", "PrimeNG", "NgRx", "TypeScript"]
