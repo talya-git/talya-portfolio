@@ -4,10 +4,10 @@ import { motion } from 'framer-motion';
 import { FiMenu, FiX } from 'react-icons/fi';
 
 const navLinks = [
-  { path: '/', label: 'בית' },
-  { path: '/about', label: 'אודות' },
-  { path: '/projects', label: 'פרויקטים' },
-  { path: '/contact', label: 'צור קשר' }
+  { path: '/', label: 'Home' },
+  { path: '/about', label: 'About' },
+  { path: '/projects', label: 'Projects' },
+  { path: '/contact', label: 'Contact' }
 ];
 
 function Navbar() {
@@ -153,7 +153,6 @@ const styles = {
   }
 };
 
-// Media query handled via CSS
 const styleSheet = document.createElement('style');
 styleSheet.textContent = `
   @media (max-width: 768px) {

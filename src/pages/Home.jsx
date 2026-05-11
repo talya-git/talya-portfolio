@@ -1,12 +1,11 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { FiArrowLeft, FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
-import { personalInfo, skills } from '../data/resume';
+import { FiArrowRight, FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
+import { personalInfo } from '../data/resume';
 
 function Home() {
   return (
     <div style={styles.page}>
-      {/* Background Effects */}
       <div style={styles.bgOrb1} />
       <div style={styles.bgOrb2} />
       <div style={styles.bgOrb3} />
@@ -24,27 +23,25 @@ function Home() {
             transition={{ delay: 0.3 }}
             style={styles.badge}
           >
-            👋 שלום, אני
+            👋 Hi there, I'm
           </motion.span>
 
           <h1 style={styles.name}>{personalInfo.name}</h1>
           <h2 style={styles.title}>{personalInfo.title}</h2>
           <p style={styles.summary}>{personalInfo.summary}</p>
 
-
-
           <div style={styles.buttons}>
-            <Link to="/projects" className="btn btn-primary" style={styles.btn}>
-              הפרויקטים שלי <FiArrowLeft />
+            <Link to="/projects" style={styles.btn}>
+              View My Work <FiArrowRight />
             </Link>
-            <Link to="/contact" className="btn btn-outline" style={styles.btnOutline}>
-              צרי קשר
+            <Link to="/contact" style={styles.btnOutline}>
+              Get In Touch
             </Link>
           </div>
 
           <div style={styles.socials}>
             <a href={`mailto:${personalInfo.email}`} style={styles.socialIcon}><FiMail size={20} /></a>
-            <a href="#" style={styles.socialIcon}><FiGithub size={20} /></a>
+            <a href="https://github.com/talya-git" target="_blank" rel="noreferrer" style={styles.socialIcon}><FiGithub size={20} /></a>
             <a href="#" style={styles.socialIcon}><FiLinkedin size={20} /></a>
           </div>
         </motion.div>
@@ -65,19 +62,20 @@ function Home() {
 {`const developer = {
   name: "${personalInfo.name}",
   role: "Full Stack Developer",
-  skills: [
+  expertise: [
     "React", "Angular",
-    ".NET", "Node.js"
+    ".NET", "Node.js",
+    "Spring Boot"
   ],
-  passion: "Building amazing
-    web experiences ✨"
+  passion: "Crafting elegant
+    solutions to complex
+    problems ✨"
 };`}
             </pre>
           </div>
         </motion.div>
       </div>
 
-      {/* Stats Section */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -85,16 +83,16 @@ function Home() {
         style={styles.stats}
       >
         <div style={styles.stat}>
-          <span style={styles.statNumber}>+2</span>
-          <span style={styles.statLabel}>שנות לימוד</span>
+          <span style={styles.statNumber}>2+</span>
+          <span style={styles.statLabel}>Years of Study</span>
         </div>
         <div style={styles.stat}>
-          <span style={styles.statNumber}>+10</span>
-          <span style={styles.statLabel}>טכנולוגיות</span>
+          <span style={styles.statNumber}>10+</span>
+          <span style={styles.statLabel}>Technologies</span>
         </div>
         <div style={styles.stat}>
           <span style={styles.statNumber}>Full Stack</span>
-          <span style={styles.statLabel}>התמחות</span>
+          <span style={styles.statLabel}>Specialization</span>
         </div>
       </motion.div>
     </div>
@@ -181,22 +179,8 @@ const styles = {
     fontSize: '1.05rem',
     color: '#b8b8d4',
     lineHeight: 1.8,
-    marginBottom: '24px',
+    marginBottom: '32px',
     maxWidth: '500px'
-  },
-  techTags: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    gap: '8px',
-    marginBottom: '32px'
-  },
-  tag: {
-    padding: '6px 14px',
-    borderRadius: '20px',
-    background: 'rgba(108, 99, 255, 0.1)',
-    border: '1px solid rgba(108, 99, 255, 0.2)',
-    fontSize: '0.85rem',
-    color: '#8b83ff'
   },
   buttons: {
     display: 'flex',

@@ -24,10 +24,10 @@
 }
 
 body {
-  font-family: 'Heebo', 'Inter', sans-serif;
+  font-family: 'Inter', 'Heebo', sans-serif;
   background: var(--bg-dark);
   color: var(--text-primary);
-  direction: rtl;
+  direction: ltr;
   overflow-x: hidden;
   line-height: 1.7;
 }

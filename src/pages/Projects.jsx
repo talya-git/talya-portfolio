@@ -7,7 +7,6 @@ function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState({});
 
-  // Auto-slide every 3 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex(prev => {
@@ -32,8 +31,8 @@ function Projects() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 style={styles.title}>הפרויקטים שלי</h1>
-          <p style={styles.subtitle}>אוסף הפרויקטים שפיתחתי - עם קוד, תמונות מסך ולינקים</p>
+          <h1 style={styles.title}>My Projects</h1>
+          <p style={styles.subtitle}>A curated collection of my work — featuring source code, live demos, and screenshots</p>
         </motion.div>
 
         <div style={styles.grid}>
@@ -63,7 +62,7 @@ function Projects() {
                 ) : (
                   <div style={styles.placeholder}>
                     <FiImage size={40} color="#6b6b8a" />
-                    <span style={styles.placeholderText}>לחצי להוספת תמונות</span>
+                    <span style={styles.placeholderText}>Screenshots coming soon</span>
                   </div>
                 )}
                 {project.images && project.images.length > 1 && (
@@ -94,30 +93,18 @@ function Projects() {
                 <div style={styles.cardActions}>
                   {project.liveUrl && (
                     <a href={project.liveUrl} target="_blank" rel="noreferrer" style={styles.actionBtn}>
-                      <FiExternalLink size={16} /> צפייה באתר
+                      <FiExternalLink size={16} /> Live Demo
                     </a>
                   )}
                   {project.githubUrl && (
                     <a href={project.githubUrl} target="_blank" rel="noreferrer" style={styles.actionBtn}>
-                      <FiGithub size={16} /> קוד מקור
+                      <FiGithub size={16} /> Source Code
                     </a>
                   )}
                 </div>
               </div>
             </motion.div>
           ))}
-
-          {/* Add New Project Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: projects.length * 0.1 }}
-            style={styles.addCard}
-          >
-            <span style={styles.addIcon}>+</span>
-            <span style={styles.addText}>הוסיפי פרויקט חדש</span>
-            <span style={styles.addHint}>ערכי את קובץ resume.js</span>
-          </motion.div>
         </div>
       </div>
 
@@ -145,26 +132,30 @@ function Projects() {
               <h2 style={styles.modalTitle}>{selectedProject.title}</h2>
               <p style={styles.modalDesc}>{selectedProject.description}</p>
 
-              <div style={styles.modalSection}>
-                <h4 style={styles.modalLabel}>צד לקוח:</h4>
-                <div style={styles.techRow}>
-                  {selectedProject.techStack.client.map(t => (
-                    <span key={t} style={styles.techTag}>{t}</span>
-                  ))}
+              {selectedProject.techStack.client.length > 0 && (
+                <div style={styles.modalSection}>
+                  <h4 style={styles.modalLabel}>Frontend:</h4>
+                  <div style={styles.techRow}>
+                    {selectedProject.techStack.client.map(t => (
+                      <span key={t} style={styles.techTag}>{t}</span>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
+
+              {selectedProject.techStack.server.length > 0 && (
+                <div style={styles.modalSection}>
+                  <h4 style={styles.modalLabel}>Backend:</h4>
+                  <div style={styles.techRow}>
+                    {selectedProject.techStack.server.map(t => (
+                      <span key={t} style={styles.techTag}>{t}</span>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               <div style={styles.modalSection}>
-                <h4 style={styles.modalLabel}>צד שרת:</h4>
-                <div style={styles.techRow}>
-                  {selectedProject.techStack.server.map(t => (
-                    <span key={t} style={styles.techTag}>{t}</span>
-                  ))}
-                </div>
-              </div>
-
-              <div style={styles.modalSection}>
-                <h4 style={styles.modalLabel}>פיצ'רים עיקריים:</h4>
+                <h4 style={styles.modalLabel}>Key Features:</h4>
                 <ul style={styles.modalList}>
                   {selectedProject.highlights.map((h, i) => (
                     <li key={i} style={styles.modalListItem}>▹ {h}</li>
@@ -174,7 +165,7 @@ function Projects() {
 
               {selectedProject.images && selectedProject.images.length > 0 && (
                 <div style={styles.modalSection}>
-                  <h4 style={styles.modalLabel}>צילומי מסך:</h4>
+                  <h4 style={styles.modalLabel}>Screenshots:</h4>
                   <div style={styles.imageGallery}>
                     {selectedProject.images.map((img, i) => (
                       <img key={i} src={img} alt={`screenshot ${i + 1}`} style={styles.galleryImg} />
@@ -321,32 +312,6 @@ const styles = {
     textDecoration: 'none',
     transition: 'all 0.3s'
   },
-  addCard: {
-    background: 'rgba(18, 18, 42, 0.4)',
-    border: '2px dashed rgba(108, 99, 255, 0.2)',
-    borderRadius: '20px',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    minHeight: '340px',
-    cursor: 'pointer',
-    transition: 'all 0.3s',
-    gap: '12px'
-  },
-  addIcon: {
-    fontSize: '3rem',
-    color: '#6b6b8a'
-  },
-  addText: {
-    color: '#6b6b8a',
-    fontSize: '1rem',
-    fontWeight: 600
-  },
-  addHint: {
-    color: '#4a4a6a',
-    fontSize: '0.8rem'
-  },
   overlay: {
     position: 'fixed',
     inset: 0,
@@ -371,7 +336,7 @@ const styles = {
   closeBtn: {
     position: 'absolute',
     top: '16px',
-    left: '16px',
+    right: '16px',
     background: 'none',
     border: 'none',
     color: '#6b6b8a',

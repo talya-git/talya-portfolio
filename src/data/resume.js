@@ -1,24 +1,24 @@
 export const personalInfo = {
-  name: "טליה טולידאנו",
-  title: "הנדסאית תוכנה | Full Stack Developer",
+  name: "Talya Toledano",
+  title: "Software Engineer | Full Stack Developer",
   email: "talyatoledano10@gmail.com",
   phone: "0556703107",
-  summary: "מפתחת Full Stack בעלת חשיבה אנליטית ויכולת למידה עצמאית ומהירה. מנוסה בפיתוח מערכות Web מקצה לקצה תוך הטמעת כלי AI לייעול תהליכי עבודה ושיפור ביצועים. שחקנית צוות בעלת יחסי אנוש מעולים, המצטיינת בפתרון בעיות מורכבות בסביבה דינמית ותחת לחץ.",
-  languages: ["עברית - שפת אם", "אנגלית טכנית ומדוברת - ברמה טובה מאד"]
+  summary: "Results-driven Full Stack Developer with strong analytical thinking and a proven ability to rapidly acquire new technologies. Experienced in building end-to-end web systems while leveraging AI tools to streamline workflows and enhance performance. A collaborative team player who thrives in dynamic, high-pressure environments, delivering clean, maintainable code that meets the highest professional standards.",
+  languages: ["Hebrew — Native", "English — Highly proficient (technical & conversational)"]
 };
 
 export const experience = [
   {
-    company: "משרד החינוך",
-    role: "מפתחת תוכנה",
-    period: "ספטמבר 2025 - ינואר 2026",
-    project: "פרויקט IRG (מערכת ניהול יחידות ארגוניות)",
+    company: "Ministry of Education",
+    role: "Software Developer",
+    period: "Sep 2025 — Jan 2026",
+    project: "IRG — Organizational Unit Management System",
     highlights: [
-      "פיתוח Full-Stack של מערכת היררכית מורכבת ב-.NET 8 ו-Angular 19 בארכיטקטורת שכבות ורכיבי Standalone",
-      "צד שרת מתקדם: מימוש Generic Repository, עבודה עם EF Core 8 וניהול קשרים רקורסיביים ב-SQL Server",
-      "אבטחה ואימות: הקמת שכבת BFF, מימוש אימות מול ADFS (OIDC), ניהול Refresh Token והגנת CSRF",
-      "ביצועים ו-State: הטמעת Redis Caching (דפוס Cache-Aside) וניהול מצב ריאקטיבי באמצעות Signals ו-NgRx",
-      "ממשק משתמש: פיתוח UI דינמי ב-PrimeNG הכולל טבלאות מורכבות, תצוגות עץ וניהול הרשאות (RBAC)"
+      "Architected and developed a full-stack hierarchical system using .NET 8 and Angular 19 with layered architecture and Standalone components",
+      "Implemented advanced server-side patterns including Generic Repository, EF Core 8, and recursive relationship management in SQL Server",
+      "Engineered authentication & security layer: BFF gateway, OIDC authentication via ADFS, Refresh Token management, and CSRF protection",
+      "Optimized performance through Redis Caching (Cache-Aside pattern) and reactive state management using Signals and NgRx",
+      "Developed dynamic UI components with PrimeNG featuring complex data tables, tree views, and role-based access control (RBAC)"
     ]
   }
 ];
@@ -26,17 +26,17 @@ export const experience = [
 export const projects = [
   {
     id: 1,
-    title: "ממשק קניות אונליין",
-    description: "פיתוח ממשק משתמש דינמי ומתקדם לביצוע קניות אונליין",
+    title: "E-Commerce Platform",
+    description: "A dynamic, feature-rich online shopping interface with real-time inventory management and seamless user experience",
     techStack: {
       server: ["Node.js", "C#", "Web API", "SQL Server", "MongoDB"],
       client: ["React 19", "JavaScript", "HTML5", "CSS3"]
     },
     highlights: [
-      "קטלוג מוצרים, סינון וניהול סל קניות עם עדכון בזמן אמת",
-      "בניית API לניהול מלאי, הזמנות ומשתמשים",
-      "הטמעת מערכת הרשאות (Admin Panel) לפעולות CRUD",
-      "עיצוב רספונסיבי ומודרני, מותאם לטעינה מהירה וביצועים גבוהים"
+      "Built a responsive product catalog with advanced filtering and real-time cart updates",
+      "Designed RESTful APIs for inventory, order, and user management",
+      "Implemented role-based Admin Panel with full CRUD operations",
+      "Optimized for fast load times and high performance across all devices"
     ],
     images: [],
     liveUrl: null,
@@ -44,17 +44,17 @@ export const projects = [
   },
   {
     id: 2,
-    title: "מערכת ניהול יחידות ארגוניות (IRG)",
-    description: "מערכת Full-Stack היררכית לניהול יחידות ארגוניות - פרויקט במשרד החינוך",
+    title: "Organizational Unit Management System",
+    description: "Enterprise-grade full-stack application for managing hierarchical organizational structures — developed for the Ministry of Education",
     techStack: {
       server: [".NET 8", "EF Core", "SQL Server", "Redis"],
       client: ["Angular 19", "PrimeNG", "NgRx", "TypeScript"]
     },
     highlights: [
-      "ארכיטקטורת שכבות עם Generic Repository",
-      "אימות OIDC מול ADFS עם שכבת BFF",
-      "Redis Caching בדפוס Cache-Aside",
-      "ניהול הרשאות RBAC ותצוגות עץ דינמיות"
+      "Layered architecture with Generic Repository pattern",
+      "OIDC authentication via ADFS with BFF security layer",
+      "Redis Caching using Cache-Aside pattern for optimal performance",
+      "Dynamic tree views and complex data tables with RBAC permissions"
     ],
     images: [
       "/screenshots/angular-1.webp",
@@ -73,15 +73,15 @@ export const projects = [
   },
   {
     id: 3,
-    title: "Docker Redis",
-    description: "פרויקט הדגמת עבודה עם Redis ו-Docker",
+    title: "Docker & Redis Integration",
+    description: "Containerized caching solution demonstrating Docker orchestration with Redis for high-performance data management",
     techStack: {
       server: ["Docker", "Redis"],
       client: []
     },
     highlights: [
-      "הקמת סביבת Docker עם Redis",
-      "ניהול Cache ושיפור ביצועים"
+      "Configured Docker environment with Redis containers",
+      "Implemented caching strategies for performance optimization"
     ],
     images: [],
     liveUrl: null,
@@ -89,16 +89,16 @@ export const projects = [
   },
   {
     id: 4,
-    title: "תרגילי אלגוריתמים",
-    description: "אוסף תרגילים ופתרונות באלגוריתמים ומבני נתונים",
+    title: "Algorithms & Data Structures",
+    description: "Comprehensive collection of algorithm implementations and data structure exercises showcasing problem-solving proficiency",
     techStack: {
       server: ["C", "Java"],
       client: []
     },
     highlights: [
-      "אלגוריתמים על גרפים",
-      "מבני נתונים מתקדמים",
-      "פתרון בעיות לוגיות מורכבות"
+      "Graph algorithms and traversal techniques",
+      "Advanced data structure implementations",
+      "Complex logical problem-solving solutions"
     ],
     images: [],
     liveUrl: null,
@@ -108,20 +108,20 @@ export const projects = [
 
 export const education = [
   {
-    period: "2024-2026",
+    period: "2024 — 2026",
     items: [
-      "הנדסאות תוכנה / סמינר החדש, ירושלים - לימודים לתואר הנדסאי תוכנה בהסמכת מה\"ט",
-      "לימודי הוראה לקראת תואר \"מורה בכיר\"",
-      "קורס Ultra Code - תכנית הרחבה: Data Structure, Algorithms, Algorithms on Graphs, Operating Systems",
-      "תעודת הצטיינות באנגלית מטעם מכללת \"כוון\""
+      "Software Engineering Diploma — Seminar HaChadash, Jerusalem (accredited by MoE)",
+      "Teaching Certification — pursuing \"Senior Teacher\" qualification",
+      "Ultra Code Program — Advanced coursework: Data Structures, Algorithms, Graph Algorithms, Operating Systems",
+      "Certificate of Excellence in English — Kivun College"
     ]
   },
   {
-    period: "2020-2024",
+    period: "2020 — 2024",
     items: [
-      "ביה\"ס על יסודי סמינר החדש ירושלים",
-      "בחינות מטעם מכון סאלד תואמי בגרות בהצטיינות",
-      "מתמטיקה ברמת 5 יחידות לימוד"
+      "Seminar HaChadash High School, Jerusalem",
+      "Matriculation exams with honors (Sald Institute accredited)",
+      "Mathematics — 5 units (highest level)"
     ]
   }
 ];
@@ -133,5 +133,5 @@ export const skills = {
   os: ["Linux/Unix", "Windows"],
   tools: ["Git", "VS Code", "Visual Studio", "Postman", "Eclipse", "PyCharm", "AWS", "Azure"],
   concepts: ["OOP", "Design Patterns", "Microservices", "AI Development Tools"],
-  courses: ["אלגוריתמים", "מבני נתונים", "גרפים", "תקשורת מחשבים ורשתות", "מערכות הפעלה", "מערכות ספרתיות", "אבטחת תוכנה", "ניתוח מערכות", "חווית משתמש", "אנגלית טכנית"]
+  courses: ["Algorithms", "Data Structures", "Graph Theory", "Computer Networks", "Operating Systems", "Digital Systems", "Software Security", "Systems Analysis", "UX Design", "Technical English"]
 };

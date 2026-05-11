@@ -4,17 +4,12 @@ import { FiMail, FiPhone, FiGithub, FiLinkedin, FiSend, FiCheck, FiAlertCircle }
 import emailjs from '@emailjs/browser';
 import { personalInfo } from '../data/resume';
 
-// ===== הגדרות EmailJS =====
-// 1. הירשמי ב-https://www.emailjs.com (חינם)
-// 2. צרי Service (חברי Gmail/Outlook)
-// 3. צרי Template עם המשתנים: from_name, from_email, subject, message
-// 4. שימי כאן את המפתחות שלך:
 const EMAILJS_SERVICE_ID = 'service_d34nq0c';
 const EMAILJS_TEMPLATE_ID = 'template_wiuclb8';
 const EMAILJS_PUBLIC_KEY = 'GSstTl-kpNl19rfHj';
 
 function Contact() {
-  const [status, setStatus] = useState(null); // 'sending' | 'success' | 'error'
+  const [status, setStatus] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -48,8 +43,8 @@ function Contact() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 style={styles.title}>צרו קשר</h1>
-          <p style={styles.subtitle}>מעוניינים לשמוע עוד? אשמח לשוחח!</p>
+          <h1 style={styles.title}>Get In Touch</h1>
+          <p style={styles.subtitle}>Interested in working together? I'd love to hear from you.</p>
         </motion.div>
 
         <div style={styles.grid}>
@@ -59,17 +54,17 @@ function Contact() {
             transition={{ delay: 0.2 }}
             style={styles.infoSection}
           >
-            <h3 style={styles.infoTitle}>בואו נדבר</h3>
+            <h3 style={styles.infoTitle}>Let's Connect</h3>
             <p style={styles.infoText}>
-              אני פתוחה להזדמנויות חדשות ואשמח לשמוע על פרויקטים מעניינים.
-              אל תהססו ליצור קשר!
+              I'm open to new opportunities and excited to collaborate on innovative projects.
+              Whether you have a question or just want to say hello — don't hesitate to reach out.
             </p>
 
             <div style={styles.contactItems}>
               <a href={`mailto:${personalInfo.email}`} style={styles.contactItem}>
                 <div style={styles.contactIcon}><FiMail size={20} /></div>
                 <div>
-                  <span style={styles.contactLabel}>אימייל</span>
+                  <span style={styles.contactLabel}>Email</span>
                   <span style={styles.contactValue}>{personalInfo.email}</span>
                 </div>
               </a>
@@ -77,14 +72,14 @@ function Contact() {
               <a href={`tel:${personalInfo.phone}`} style={styles.contactItem}>
                 <div style={styles.contactIcon}><FiPhone size={20} /></div>
                 <div>
-                  <span style={styles.contactLabel}>טלפון</span>
+                  <span style={styles.contactLabel}>Phone</span>
                   <span style={styles.contactValue}>{personalInfo.phone}</span>
                 </div>
               </a>
             </div>
 
             <div style={styles.socials}>
-              <a href="#" style={styles.socialBtn}>
+              <a href="https://github.com/talya-git" target="_blank" rel="noreferrer" style={styles.socialBtn}>
                 <FiGithub size={20} /> GitHub
               </a>
               <a href="#" style={styles.socialBtn}>
@@ -101,30 +96,30 @@ function Contact() {
             onSubmit={handleSubmit}
           >
             <div style={styles.formGroup}>
-              <label style={styles.label}>שם מלא</label>
-              <input name="name" style={styles.input} placeholder="השם שלך" required />
+              <label style={styles.label}>Full Name</label>
+              <input name="name" style={styles.input} placeholder="Your name" required />
             </div>
             <div style={styles.formGroup}>
-              <label style={styles.label}>אימייל</label>
+              <label style={styles.label}>Email Address</label>
               <input name="email" type="email" style={styles.input} placeholder="your@email.com" required />
             </div>
             <div style={styles.formGroup}>
-              <label style={styles.label}>נושא</label>
-              <input name="subject" style={styles.input} placeholder="במה אוכל לעזור?" />
+              <label style={styles.label}>Subject</label>
+              <input name="subject" style={styles.input} placeholder="How can I help?" />
             </div>
             <div style={styles.formGroup}>
-              <label style={styles.label}>הודעה</label>
-              <textarea name="message" style={styles.textarea} placeholder="כתבו את ההודעה שלכם..." rows={5} required />
+              <label style={styles.label}>Message</label>
+              <textarea name="message" style={styles.textarea} placeholder="Write your message here..." rows={5} required />
             </div>
             <button type="submit" style={styles.submitBtn} disabled={status === 'sending'}>
-              {status === 'sending' ? '⏳ שולח...' : <><FiSend size={18} /> שליחה</>}
+              {status === 'sending' ? '⏳ Sending...' : <><FiSend size={18} /> Send Message</>}
             </button>
 
             {status === 'success' && (
-              <div style={styles.successMsg}><FiCheck size={18} /> ההודעה נשלחה בהצלחה!</div>
+              <div style={styles.successMsg}><FiCheck size={18} /> Message sent successfully!</div>
             )}
             {status === 'error' && (
-              <div style={styles.errorMsg}><FiAlertCircle size={18} /> שגיאה בשליחה, נסו שוב</div>
+              <div style={styles.errorMsg}><FiAlertCircle size={18} /> Failed to send. Please try again.</div>
             )}
           </motion.form>
         </div>
@@ -213,9 +208,7 @@ const styles = {
   contactValue: {
     display: 'block',
     color: '#fff',
-    fontWeight: 500,
-    direction: 'ltr',
-    textAlign: 'right'
+    fontWeight: 500
   },
   socials: {
     display: 'flex',

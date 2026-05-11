@@ -11,8 +11,8 @@ function About() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 style={styles.title}>אודות</h1>
-          <p style={styles.subtitle}>הרקע המקצועי וההשכלה שלי</p>
+          <h1 style={styles.title}>About Me</h1>
+          <p style={styles.subtitle}>My professional background, skills, and education</p>
         </motion.div>
 
         {/* Experience */}
@@ -24,7 +24,7 @@ function About() {
         >
           <div style={styles.sectionHeader}>
             <FiBriefcase size={24} color="#6c63ff" />
-            <h2 style={styles.sectionTitle}>ניסיון תעסוקתי</h2>
+            <h2 style={styles.sectionTitle}>Professional Experience</h2>
           </div>
 
           {experience.map((exp, i) => (
@@ -56,12 +56,12 @@ function About() {
         >
           <div style={styles.sectionHeader}>
             <FiCode size={24} color="#00d4aa" />
-            <h2 style={styles.sectionTitle}>ידע מקצועי</h2>
+            <h2 style={styles.sectionTitle}>Technical Skills</h2>
           </div>
 
           <div style={styles.skillsGrid}>
             <div style={styles.skillCategory}>
-              <h4 style={styles.skillCatTitle}>שפות תכנות</h4>
+              <h4 style={styles.skillCatTitle}>Programming Languages</h4>
               <div style={styles.tags}>
                 {skills.languages.map(s => <span key={s} style={styles.skillTag}>{s}</span>)}
               </div>
@@ -73,31 +73,31 @@ function About() {
               </div>
             </div>
             <div style={styles.skillCategory}>
-              <h4 style={styles.skillCatTitle}>בסיסי נתונים</h4>
+              <h4 style={styles.skillCatTitle}>Databases</h4>
               <div style={styles.tags}>
                 {skills.databases.map(s => <span key={s} style={styles.skillTag}>{s}</span>)}
               </div>
             </div>
             <div style={styles.skillCategory}>
-              <h4 style={styles.skillCatTitle}>עקרונות ומתודולוגיות</h4>
+              <h4 style={styles.skillCatTitle}>Architecture & Methodologies</h4>
               <div style={styles.tags}>
                 {skills.concepts.map(s => <span key={s} style={{...styles.skillTag, ...styles.highlightTag}}>{s}</span>)}
               </div>
             </div>
             <div style={styles.skillCategory}>
-              <h4 style={styles.skillCatTitle}>כלים וסביבות</h4>
+              <h4 style={styles.skillCatTitle}>Tools & Environments</h4>
               <div style={styles.tags}>
                 {skills.tools.map(s => <span key={s} style={styles.skillTag}>{s}</span>)}
               </div>
             </div>
             <div style={styles.skillCategory}>
-              <h4 style={styles.skillCatTitle}>מערכות הפעלה</h4>
+              <h4 style={styles.skillCatTitle}>Operating Systems</h4>
               <div style={styles.tags}>
                 {skills.os.map(s => <span key={s} style={styles.skillTag}>{s}</span>)}
               </div>
             </div>
             <div style={styles.skillCategory}>
-              <h4 style={styles.skillCatTitle}>קורסי הרחבה</h4>
+              <h4 style={styles.skillCatTitle}>Advanced Coursework</h4>
               <div style={styles.tags}>
                 {skills.courses.map(s => <span key={s} style={styles.skillTag}>{s}</span>)}
               </div>
@@ -114,7 +114,7 @@ function About() {
         >
           <div style={styles.sectionHeader}>
             <FiBook size={24} color="#ff6b9d" />
-            <h2 style={styles.sectionTitle}>השכלה</h2>
+            <h2 style={styles.sectionTitle}>Education</h2>
           </div>
 
           {education.map((edu, i) => (
