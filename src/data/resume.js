@@ -126,7 +126,7 @@ export const projects = [
       "Unbeatable AI opponent with optimal decision-making",
       "Score tracking and responsive modern UI"
     ],
-    images: [],
+    images: ["/screenshots/tictactoe-1.png"],
     liveUrl: "https://ai-tictactoe-qrbl.onrender.com",
     githubUrl: "https://github.com/talya-git/ai-tictactoe"
   }
