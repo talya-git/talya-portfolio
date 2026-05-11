@@ -228,7 +228,7 @@ const styles = {
     transition: 'all 0.3s'
   },
   cardImage: {
-    height: '200px',
+    height: '300px',
     background: 'rgba(10, 10, 26, 0.5)',
     display: 'flex',
     alignItems: 'center',
@@ -240,10 +240,11 @@ const styles = {
   img: {
     width: '100%',
     height: '100%',
-    objectFit: 'cover',
+    objectFit: 'contain',
     position: 'absolute',
     top: 0,
-    left: 0
+    left: 0,
+    padding: '8px'
   },
   dots: {
     position: 'absolute',
