@@ -38,7 +38,15 @@ export const projects = [
       "Implemented role-based Admin Panel with full CRUD operations",
       "Optimized for fast load times and high performance across all devices"
     ],
-    images: [],
+    images: [
+      "/screenshots/shopping-1.webp",
+      "/screenshots/shopping-2.webp",
+      "/screenshots/shopping-3.webp",
+      "/screenshots/shopping-4.webp",
+      "/screenshots/shopping-5.webp",
+      "/screenshots/shopping-6.webp",
+      "/screenshots/shopping-7.webp"
+    ],
     liveUrl: null,
     githubUrl: "https://github.com/talya-git/project-react-node"
   },
