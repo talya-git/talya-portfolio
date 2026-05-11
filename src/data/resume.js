@@ -111,6 +111,24 @@ export const projects = [
     images: [],
     liveUrl: null,
     githubUrl: "https://github.com/talya-git/exe-10"
+  },
+  {
+    id: 5,
+    title: "AI Tic Tac Toe",
+    description: "An unbeatable Tic Tac Toe game powered by the Minimax Algorithm with Alpha-Beta Pruning — play against an AI that never loses",
+    techStack: {
+      server: ["Python", "Flask"],
+      client: ["JavaScript", "HTML5", "CSS3"]
+    },
+    highlights: [
+      "Minimax algorithm with Alpha-Beta Pruning optimization",
+      "RESTful API for real-time game state management",
+      "Unbeatable AI opponent with optimal decision-making",
+      "Score tracking and responsive modern UI"
+    ],
+    images: [],
+    liveUrl: "https://ai-tictactoe-qrbl.onrender.com",
+    githubUrl: "https://github.com/talya-git/ai-tictactoe"
   }
 ];
 
