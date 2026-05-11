@@ -38,15 +38,7 @@ export const projects = [
       "הטמעת מערכת הרשאות (Admin Panel) לפעולות CRUD",
       "עיצוב רספונסיבי ומודרני, מותאם לטעינה מהירה וביצועים גבוהים"
     ],
-    images: [
-      "/screenshots/shopping-1.webp",
-      "/screenshots/shopping-2.webp",
-      "/screenshots/shopping-3.webp",
-      "/screenshots/shopping-4.webp",
-      "/screenshots/shopping-5.webp",
-      "/screenshots/shopping-6.webp",
-      "/screenshots/shopping-7.webp"
-    ],
+    images: [],
     liveUrl: null,
     githubUrl: "https://github.com/talya-git/project-react-node"
   },
@@ -64,7 +56,18 @@ export const projects = [
       "Redis Caching בדפוס Cache-Aside",
       "ניהול הרשאות RBAC ותצוגות עץ דינמיות"
     ],
-    images: [],
+    images: [
+      "/screenshots/angular-1.webp",
+      "/screenshots/angular-2.webp",
+      "/screenshots/angular-3.webp",
+      "/screenshots/angular-4.webp",
+      "/screenshots/angular-5.webp",
+      "/screenshots/angular-6.webp",
+      "/screenshots/angular-7.webp",
+      "/screenshots/angular-8.webp",
+      "/screenshots/angular-9.webp",
+      "/screenshots/angular-10.webp"
+    ],
     liveUrl: null,
     githubUrl: "https://github.com/talya-git/project-angular-netCore"
   },
