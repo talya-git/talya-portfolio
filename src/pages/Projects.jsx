@@ -1,10 +1,28 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiExternalLink, FiGithub, FiImage, FiX } from 'react-icons/fi';
 import { projects } from '../data/resume';
 
 function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState({});
+
+  // Auto-slide every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex(prev => {
+        const next = { ...prev };
+        projects.forEach(project => {
+          if (project.images && project.images.length > 1) {
+            const current = prev[project.id] || 0;
+            next[project.id] = (current + 1) % project.images.length;
+          }
+        });
+        return next;
+      });
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div style={styles.page}>
@@ -30,11 +48,35 @@ function Projects() {
             >
               <div style={styles.cardImage}>
                 {project.images && project.images.length > 0 ? (
-                  <img src={project.images[0]} alt={project.title} style={styles.img} />
+                  <AnimatePresence mode="wait">
+                    <motion.img
+                      key={currentImageIndex[project.id] || 0}
+                      src={project.images[currentImageIndex[project.id] || 0]}
+                      alt={project.title}
+                      style={styles.img}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.5 }}
+                    />
+                  </AnimatePresence>
                 ) : (
                   <div style={styles.placeholder}>
                     <FiImage size={40} color="#6b6b8a" />
                     <span style={styles.placeholderText}>לחצי להוספת תמונות</span>
+                  </div>
+                )}
+                {project.images && project.images.length > 1 && (
+                  <div style={styles.dots}>
+                    {project.images.map((_, i) => (
+                      <span
+                        key={i}
+                        style={{
+                          ...styles.dot,
+                          ...(i === (currentImageIndex[project.id] || 0) ? styles.dotActive : {})
+                        }}
+                      />
+                    ))}
                   </div>
                 )}
               </div>
@@ -191,12 +233,37 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    borderBottom: '1px solid rgba(108, 99, 255, 0.1)'
+    borderBottom: '1px solid rgba(108, 99, 255, 0.1)',
+    position: 'relative',
+    overflow: 'hidden'
   },
   img: {
     width: '100%',
     height: '100%',
-    objectFit: 'cover'
+    objectFit: 'cover',
+    position: 'absolute',
+    top: 0,
+    left: 0
+  },
+  dots: {
+    position: 'absolute',
+    bottom: '10px',
+    left: '50%',
+    transform: 'translateX(-50%)',
+    display: 'flex',
+    gap: '6px',
+    zIndex: 10
+  },
+  dot: {
+    width: '8px',
+    height: '8px',
+    borderRadius: '50%',
+    background: 'rgba(255,255,255,0.4)',
+    transition: 'all 0.3s'
+  },
+  dotActive: {
+    background: '#6c63ff',
+    transform: 'scale(1.3)'
   },
   placeholder: {
     display: 'flex',

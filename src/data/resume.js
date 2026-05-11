@@ -38,7 +38,15 @@ export const projects = [
       "הטמעת מערכת הרשאות (Admin Panel) לפעולות CRUD",
       "עיצוב רספונסיבי ומודרני, מותאם לטעינה מהירה וביצועים גבוהים"
     ],
-    images: [],
+    images: [
+      "/screenshots/shopping-1.webp",
+      "/screenshots/shopping-2.webp",
+      "/screenshots/shopping-3.webp",
+      "/screenshots/shopping-4.webp",
+      "/screenshots/shopping-5.webp",
+      "/screenshots/shopping-6.webp",
+      "/screenshots/shopping-7.webp"
+    ],
     liveUrl: null,
     githubUrl: "https://github.com/talya-git/project-react-node"
   },
