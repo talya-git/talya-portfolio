@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { FiArrowRight, FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
+import { FiArrowRight, FiGithub, FiLinkedin, FiMail, FiDownload } from 'react-icons/fi';
 import { personalInfo } from '../data/resume';
 
 function Home() {
@@ -34,6 +34,9 @@ function Home() {
             <Link to="/projects" style={styles.btn}>
               View My Work <FiArrowRight />
             </Link>
+            <a href="/Talya-Toledano-CV.pdf" target="_blank" rel="noreferrer" style={styles.btnOutline}>
+              <FiDownload /> Download CV
+            </a>
             <Link to="/contact" style={styles.btnOutline}>
               Get In Touch
             </Link>
