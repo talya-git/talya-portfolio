@@ -136,7 +136,7 @@ export const education = [
   {
     period: "2024 — 2026",
     items: [
-      "Software Engineering Diploma — Seminar HaChadash, Jerusalem (accredited by MoE)",
+      "Software Practical Engineering | \"Ha-Chadash\" College, Jerusalem — Studies toward a Software Engineering degree certified by MAHAT",
       "Teaching Certification — pursuing \"Senior Teacher\" qualification",
       "Ultra Code Program — Advanced coursework: Data Structures, Algorithms, Graph Algorithms, Operating Systems",
       "Certificate of Excellence in English — Kivun College"
