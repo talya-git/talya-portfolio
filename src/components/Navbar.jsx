@@ -24,9 +24,6 @@ function Navbar() {
       <div style={styles.container}>
         <Link to="/" style={styles.logo}>
           <img src="/profile.png" alt="TT" style={styles.logoImg} />
-          <span style={styles.logoAccent}>{'<'}</span>
-          TT
-          <span style={styles.logoAccent}>{'/>'}</span>
         </Link>
 
         <div style={styles.links}>
