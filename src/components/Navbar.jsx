@@ -23,6 +23,7 @@ function Navbar() {
     >
       <div style={styles.container}>
         <Link to="/" style={styles.logo}>
+          <img src="/profile.png" alt="TT" style={styles.logoImg} />
           <span style={styles.logoAccent}>{'<'}</span>
           TT
           <span style={styles.logoAccent}>{'/>'}</span>
@@ -100,7 +101,17 @@ const styles = {
     fontSize: '1.5rem',
     fontWeight: 800,
     color: '#fff',
-    textDecoration: 'none'
+    textDecoration: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    gap: '10px'
+  },
+  logoImg: {
+    width: '36px',
+    height: '36px',
+    borderRadius: '50%',
+    objectFit: 'cover',
+    border: '2px solid rgba(108, 99, 255, 0.4)'
   },
   logoAccent: {
     color: '#6c63ff'
