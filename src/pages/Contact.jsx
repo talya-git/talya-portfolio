@@ -82,7 +82,7 @@ function Contact() {
               <a href="https://github.com/talya-git" target="_blank" rel="noreferrer" style={styles.socialBtn}>
                 <FiGithub size={20} /> GitHub
               </a>
-              <a href="#" style={styles.socialBtn}>
+              <a href="https://www.linkedin.com/in/talya-toledano-9ba5b1411/" target="_blank" rel="noreferrer" style={styles.socialBtn}>
                 <FiLinkedin size={20} /> LinkedIn
               </a>
             </div>

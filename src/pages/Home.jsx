@@ -45,7 +45,7 @@ function Home() {
           <div style={styles.socials}>
             <a href={`mailto:${personalInfo.email}`} style={styles.socialIcon}><FiMail size={20} /></a>
             <a href="https://github.com/talya-git" target="_blank" rel="noreferrer" style={styles.socialIcon}><FiGithub size={20} /></a>
-            <a href="#" style={styles.socialIcon}><FiLinkedin size={20} /></a>
+            <a href="https://www.linkedin.com/in/talya-toledano-9ba5b1411/" target="_blank" rel="noreferrer" style={styles.socialIcon}><FiLinkedin size={20} /></a>
           </div>
         </motion.div>
 
@@ -55,27 +55,7 @@ function Home() {
           transition={{ duration: 0.8, delay: 0.2 }}
           style={styles.visual}
         >
-          <div style={styles.codeBlock}>
-            <div style={styles.codeHeader}>
-              <span style={styles.dot1} />
-              <span style={styles.dot2} />
-              <span style={styles.dot3} />
-            </div>
-            <pre style={styles.code}>
-{`const developer = {
-  name: "${personalInfo.name}",
-  role: "Full Stack Developer",
-  expertise: [
-    "React", "Angular",
-    ".NET", "Node.js",
-    "Spring Boot"
-  ],
-  passion: "Crafting elegant
-    solutions to complex
-    problems ✨"
-};`}
-            </pre>
-          </div>
+          <img src="/profile.png" alt="Talya Toledano" style={styles.profileImg} />
         </motion.div>
       </div>
 
@@ -241,34 +221,13 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center'
   },
-  codeBlock: {
-    background: 'rgba(18, 18, 42, 0.9)',
-    border: '1px solid rgba(108, 99, 255, 0.2)',
-    borderRadius: '16px',
-    padding: '0',
-    width: '100%',
-    maxWidth: '420px',
-    boxShadow: '0 20px 60px rgba(0,0,0,0.3)',
-    overflow: 'hidden'
-  },
-  codeHeader: {
-    display: 'flex',
-    gap: '8px',
-    padding: '14px 18px',
-    borderBottom: '1px solid rgba(108, 99, 255, 0.1)'
-  },
-  dot1: { width: '12px', height: '12px', borderRadius: '50%', background: '#ff5f57' },
-  dot2: { width: '12px', height: '12px', borderRadius: '50%', background: '#ffbd2e' },
-  dot3: { width: '12px', height: '12px', borderRadius: '50%', background: '#28ca42' },
-  code: {
-    padding: '24px',
-    fontSize: '0.9rem',
-    color: '#b8b8d4',
-    fontFamily: "'Fira Code', monospace",
-    lineHeight: 1.8,
-    direction: 'ltr',
-    textAlign: 'left',
-    margin: 0
+  profileImg: {
+    width: '320px',
+    height: '320px',
+    borderRadius: '50%',
+    objectFit: 'cover',
+    border: '3px solid rgba(108, 99, 255, 0.4)',
+    boxShadow: '0 20px 60px rgba(108, 99, 255, 0.3)'
   },
   stats: {
     maxWidth: '800px',
