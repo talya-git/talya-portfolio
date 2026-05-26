@@ -114,6 +114,25 @@ export const projects = [
   },
   {
     id: 5,
+    title: "SkillLang Games — Language Learning Platform",
+    description: "An interactive English-Hebrew language learning platform featuring multiple game modes, adaptive difficulty, real-time scoring algorithms, and a competitive leaderboard system",
+    techStack: {
+      server: ["C#", ".NET 8", "EF Core", "Oracle Database", "JWT Authentication"],
+      client: ["React 18", "JavaScript", "Axios", "Recharts", "CSS3"]
+    },
+    highlights: [
+      "Built adaptive scoring engine with streak bonuses and time-based multipliers",
+      "Implemented JWT authentication with role-based access control (Admin/User)",
+      "Designed RESTful API with full CRUD for word management and game sessions",
+      "Real-time leaderboard with aggregated statistics and player rankings",
+      "Multiple game modes: Translation, Sentence Completion with difficulty progression"
+    ],
+    images: [],
+    liveUrl: null,
+    githubUrl: "https://github.com/talya-git/SkillLangGames"
+  },
+  {
+    id: 6,
     title: "AI Tic Tac Toe",
     description: "An unbeatable Tic Tac Toe game powered by the Minimax Algorithm with Alpha-Beta Pruning — play against an AI that never loses",
     techStack: {
