@@ -3,49 +3,26 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FiSend, FiCpu, FiUser, FiTrendingUp } from 'react-icons/fi';
 import { skills, experience, education } from '../data/resume';
 
-const PROFILE_CONTEXT = `
+async function analyzeJob(jobText) {
+  const profile = `
 Skills: ${skills.languages.join(', ')}, ${skills.web.join(', ')}, ${skills.databases.join(', ')}, ${skills.tools.join(', ')}
 Concepts: ${skills.concepts.join(', ')}
 Experience: ${experience.map(e => `${e.role} at ${e.company} - ${e.highlights.join(', ')}`).join('. ')}
 Education: ${education[0].items.join(', ')}
 `;
 
-function analyzeJob(jobText) {
-  const text = jobText.toLowerCase();
-  const allSkills = [
-    ...skills.languages, ...skills.web, ...skills.databases,
-    ...skills.tools, ...skills.concepts
-  ];
-
-  const matched = allSkills.filter(s => text.includes(s.toLowerCase()));
-  const score = Math.min(Math.round((matched.length / 5) * 100), 100);
-
-  const aiKeywords = ['ai', 'llm', 'prompt', 'genai', 'machine learning', 'openai', 'langchain', 'gpt', 'agent'];
-  const hasAI = aiKeywords.some(k => text.includes(k));
-
-  const fullstackKeywords = ['full stack', 'fullstack', 'full-stack', 'react', 'angular', '.net', 'node'];
-  const hasFullstack = fullstackKeywords.some(k => text.includes(k));
-
-  let priority = 'Low';
-  let emoji = '🔵';
-  if (score >= 70 || (hasAI && hasFullstack)) { priority = 'High'; emoji = '🔥'; }
-  else if (score >= 40 || hasAI || hasFullstack) { priority = 'Medium'; emoji = '🟡'; }
-
-  let analysis = `${emoji} **Priority: ${priority}** (Match Score: ${score}%)\n\n`;
-  analysis += `✅ **Matching Skills:** ${matched.length > 0 ? matched.join(', ') : 'None directly detected'}\n\n`;
-
-  if (hasAI) analysis += `🤖 **AI/LLM Role** — Strong fit based on AI course & prompt engineering experience\n\n`;
-  if (hasFullstack) analysis += `💻 **Full Stack Role** — Excellent fit based on .NET + React/Angular experience\n\n`;
-
-  if (priority === 'High') {
-    analysis += `📧 **Recommendation:** Send application ASAP — this is a strong match!`;
-  } else if (priority === 'Medium') {
-    analysis += `📧 **Recommendation:** Worth applying — highlight relevant experience in cover letter.`;
-  } else {
-    analysis += `📧 **Recommendation:** Lower priority — consider if other aspects align with your goals.`;
+  try {
+    const res = await fetch('/.netlify/functions/ai-matcher', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ jobDescription: jobText, profile })
+    });
+    const data = await res.json();
+    if (data.error) return `❌ Error: ${data.error}`;
+    return data.analysis;
+  } catch (err) {
+    return `❌ Failed to connect to AI service. Please try again.`;
   }
-
-  return analysis;
 }
 
 function AiMatcher() {
@@ -59,21 +36,20 @@ function AiMatcher() {
   const [isTyping, setIsTyping] = useState(false);
   const [rankings, setRankings] = useState([]);
 
-  const handleSend = () => {
+  const handleSend = async () => {
     if (!input.trim()) return;
 
     const userMsg = { role: 'user', text: input };
     setMessages(prev => [...prev, userMsg]);
+    const jobText = input;
     setInput('');
     setIsTyping(true);
 
-    setTimeout(() => {
-      const analysis = analyzeJob(input);
-      const aiMsg = { role: 'ai', text: analysis };
-      setMessages(prev => [...prev, aiMsg]);
-      setRankings(prev => [...prev, { text: input.slice(0, 60) + '...', analysis }]);
-      setIsTyping(false);
-    }, 1200);
+    const analysis = await analyzeJob(jobText);
+    const aiMsg = { role: 'ai', text: analysis };
+    setMessages(prev => [...prev, aiMsg]);
+    setRankings(prev => [...prev, { text: jobText.slice(0, 60) + '...', analysis }]);
+    setIsTyping(false);
   };
 
   return (
