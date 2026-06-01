@@ -158,6 +158,7 @@ export const education = [
       "Software Practical Engineering | \"Ha-Chadash\" College, Jerusalem — Studies toward a Software Engineering degree certified by MAHAT",
       "Teaching Certification — pursuing \"Senior Teacher\" qualification",
       "Ultra Code Program — Advanced coursework: Data Structures, Algorithms, Graph Algorithms, Operating Systems",
+      "AI Course (Malka Broek) — Integrating GenAI, LLMs, and prompt engineering into software",
       "Certificate of Excellence in English — Kivun College"
     ]
   },

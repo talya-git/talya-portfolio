@@ -7,6 +7,7 @@ const navLinks = [
   { path: '/', label: 'Home' },
   { path: '/about', label: 'About' },
   { path: '/projects', label: 'Projects' },
+  { path: '/ai-matcher', label: '🤖 AI Matcher' },
   { path: '/contact', label: 'Contact' }
 ];
 
