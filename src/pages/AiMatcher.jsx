@@ -12,7 +12,7 @@ Education: ${education[0].items.join(', ')}
 `;
 
   try {
-    const res = await fetch('/.netlify/functions/ai-matcher', {
+    const res = await fetch('/api/ai-matcher', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ jobDescription: jobText, profile })
